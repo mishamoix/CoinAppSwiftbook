@@ -135,6 +135,7 @@
 		272450A02C234E90006AB30F /* CoinApp */ = {
 			isa = PBXGroup;
 			children = (
+				2776BC012C41868200D9A6F9 /* Components */,
 				2750C8282C289394007D98DD /* Utils */,
 				2750C8232C28907C007D98DD /* Models */,
 				2750C8202C28904D007D98DD /* Provider */,
@@ -274,6 +275,13 @@
 				2750C82B2C2896E2007D98DD /* CurrencyFormatter.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2776BC012C41868200D9A6F9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

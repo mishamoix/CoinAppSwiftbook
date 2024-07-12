@@ -12,14 +12,28 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
 
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(alignment: .center, spacing: 0) {
             switch viewModel.state {
             case .idle, .loading:
                 loader
             case .loaded(let models):
-                HomeHeaderView()
-                    .padding(.bottom, 20)
-                makeList(with: models)
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        print("search")
+                    }, label: {
+                        Image(.magnifier)
+                            .resizable()
+                            .frame(width: 26, height: 26)
+                            .frame(width: 44, height: 44)
+                    })
+                    .padding(.trailing, 8)
+                }.frame(height: 44)
+                ScrollView {
+                    HomeHeaderView()
+                        .padding(.bottom, 20)
+                    makeList(with: models)
+                }
             case .error:
                 error
             }

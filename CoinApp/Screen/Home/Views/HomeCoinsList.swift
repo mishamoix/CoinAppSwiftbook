@@ -13,33 +13,31 @@ struct HomeCoinsList: View {
     let assetModels: [AssetModel]
 
     var body: some View {
-            GeometryReader { geometry in
-                HStack(spacing: 0) {
-                    Text("Название")
-                        .frame(width: geometry.size.width * 0.5, alignment: .leading)
+        GeometryReader { geometry in
+            HStack(spacing: 0) {
+                Text("Название")
+                    .frame(width: geometry.size.width * 0.5, alignment: .leading)
 
-                    Text("Цена")
-                        .frame(width: geometry.size.width * 0.25)
+                Text("Цена")
+                    .frame(width: geometry.size.width * 0.25)
 
-                    Text("П/У")
-                        .frame(width: geometry.size.width * 0.25, alignment: .trailing)
-                }
-                .foregroundColor(.gray)
+                Text("П/У")
+                    .frame(width: geometry.size.width * 0.25, alignment: .trailing)
             }
-            .padding(.horizontal, 16)
-            .frame(height: 24)
+            .foregroundColor(.gray)
+        }
+        .padding(.horizontal, 16)
+        .frame(height: 24)
 
-            Divider()
+        Divider()
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
 
-        ScrollView {
-            ForEach(assetModels) { model in
-                AssetView(model: model)
-                Divider()
-            }
-            .padding(.horizontal, 16)
+        ForEach(assetModels) { model in
+            AssetView(model: model)
+            Divider()
         }
+        .padding(.horizontal, 16)
     }
 }
 
@@ -50,32 +48,35 @@ struct AssetView: View {
 
     var body: some View {
         GeometryReader(content: { geometry in
-            HStack(spacing: 0) {
-                HStack(spacing: 12) {
-                    KFImage(model.coin.image)
-                        .resizable()
-                        .transition(.opacity)
-                        .frame(width: 40, height: 40)
-                        .clipShape(Circle())
+            VStack(alignment: .center) {
+                Spacer()
 
-                    VStack(alignment: .leading) {
-                        Text(model.coin.name.uppercased())
-                            .font(.headline)
-                            .foregroundColor(.black)
+                HStack(spacing: 0) {
+                    HStack(spacing: 12) {
+                        KFImage(model.coin.image)
+                            .resizable()
+                            .transition(.opacity)
+                            .frame(width: 40, height: 40)
+                            .clipShape(Circle())
 
-                        Text(CurrencyFormatter.shared.currency(for: 0.004, sign: model.coin.symbol))
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(model.coin.name.uppercased())
+                                .font(.headline)
+                                .foregroundColor(.black)
+
+                            Text(CurrencyFormatter.shared.currency(for: 0.004, sign: model.coin.symbol))
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
                     }
-                }
-                .frame(width: geometry.size.width * 0.5, alignment: .leading)
+                    .frame(width: geometry.size.width * 0.5, alignment: .leading)
 
-                Text(CurrencyFormatter.shared.price(for: model.coin.currentPrice))
-                    .font(.headline)
-                    .foregroundColor(.black)
-                    .frame(width: geometry.size.width * 0.25)
+                    Text(CurrencyFormatter.shared.price(for: model.coin.currentPrice))
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .frame(width: geometry.size.width * 0.25)
 
-                VStack(alignment: .trailing) {
+                    VStack(alignment: .trailing, spacing: 8) {
                         Text("22$")
                             .font(.subheadline)
                             .foregroundColor(.green)
@@ -83,10 +84,13 @@ struct AssetView: View {
                         Text("1.55%")
                             .font(.subheadline)
                             .foregroundColor(.green)
+                    }
+                    .frame(width: geometry.size.width * 0.25, alignment: .trailing)
                 }
-                .frame(width: geometry.size.width * 0.25, alignment: .trailing)
+
+                Spacer()
             }
         })
-        .frame(height: 40)
+        .frame(height: 60)
     }
 }
