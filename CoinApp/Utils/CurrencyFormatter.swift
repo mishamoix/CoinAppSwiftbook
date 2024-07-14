@@ -14,23 +14,30 @@ final class CurrencyFormatter {
         let fmt = NumberFormatter()
         fmt.currencySymbol = "$"
         fmt.numberStyle = .currency
-        fmt.minimumFractionDigits = 0
+        fmt.maximumSignificantDigits = 4
         return fmt
     }()
 
     private let formatterPercent: NumberFormatter = {
         let fmt = NumberFormatter()
         fmt.numberStyle = .percent
-        fmt.minimumFractionDigits = 0
+        fmt.maximumSignificantDigits = 4
         return fmt
     }()
 
 
-    func price(for value: Double) -> String {
+    func price(for value: Double?, defaultValue: String = "--") -> String {
+        guard let value else {
+            return defaultValue
+        }
+
         return currency(for: value, sign: "$")
     }
 
-    func percent(for value: Double) -> String {
+    func percent(for value: Double?, defaultValue: String = "--") -> String {
+        guard let value else {
+            return defaultValue
+        }
         return formatterPercent.string(from: NSNumber(floatLiteral: value)) ?? String(value)
     }
 

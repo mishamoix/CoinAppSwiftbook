@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol MainCoordinatorProtocol {
-    func goToMain()
+protocol MainCoordinatorProtocol: AnyObject {
+    func goBack()
     func goToSearch()
     func goToPurchase()
     func goToAsset()
@@ -23,24 +23,30 @@ final class MainCoordinator {
     }()
     private let network = NetworkManagerImpl()
 
+    private let dbSetup = DatabaseSetup()
+    private lazy var assetService = AssetService(networkProvider: CoinProvider(network: network), dbProvider: AssetDatabaseProvider(dataStack: dbSetup.dataStack))
+
     init(window: UIWindow) {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+
+        dbSetup.setup()
     }
 
     func run() {
-        let viewModel = HomeViewModel(provider: CoinProvider(network: network))
+        let viewModel = HomeViewModel(service: assetService, coordinator: self)
         navigationController.setViewControllers([HomeViewController(viewModel: viewModel)], animated: false)
     }
 }
 
 extension MainCoordinator: MainCoordinatorProtocol {
-    func goToMain() {
-        
+    func goBack() {
+        navigationController.popViewController(animated: true)
     }
     
     func goToSearch() {
-
+        let viewModel = SearchViewModel(service: assetService, coordinator: self)
+        navigationController.pushViewController(SearchViewController(viewModel: viewModel), animated: true)
     }
     
     func goToPurchase() {

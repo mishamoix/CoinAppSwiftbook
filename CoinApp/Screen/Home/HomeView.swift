@@ -20,7 +20,7 @@ struct HomeView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        print("search")
+                        viewModel.searchTapped()
                     }, label: {
                         Image(.magnifier)
                             .resizable()

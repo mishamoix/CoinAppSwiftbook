@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Asset" representedClassName="Asset" syncable="YES">
+        <attribute name="avgPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="count" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="currentPrice" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="URI"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="sort" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="symbol" attributeType="String"/>
+    </entity>
+</model>

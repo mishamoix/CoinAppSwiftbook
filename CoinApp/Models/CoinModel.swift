@@ -13,6 +13,6 @@ struct CoinModel: Decodable {
     let id: String
     let symbol: String
     let name: String
-    let image: URL
+    let image: URL?
     let currentPrice: Double
 }

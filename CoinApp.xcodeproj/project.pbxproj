@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270982B12C442ED000D15671 /* CoreStore in Frameworks */ = {isa = PBXBuildFile; productRef = 270982B02C442ED000D15671 /* CoreStore */; };
+		270982B32C442EEC00D15671 /* DatabaseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982B22C442EEC00D15671 /* DatabaseSetup.swift */; };
+		270982B62C442F4200D15671 /* CoinKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 270982B42C442F4200D15671 /* CoinKeeper.xcdatamodeld */; };
+		270982B92C44300000D15671 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982B82C44300000D15671 /* Asset.swift */; };
+		270982BB2C44313700D15671 /* AssetDatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982BA2C44313700D15671 /* AssetDatabaseProvider.swift */; };
+		270982BE2C4433E200D15671 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982BD2C4433E200D15671 /* AssetService.swift */; };
+		270982C02C443BD900D15671 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982BF2C443BD900D15671 /* SearchViewModel.swift */; };
+		270982C32C443DDD00D15671 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982C22C443DDD00D15671 /* SearchViewController.swift */; };
+		270982C52C443E0700D15671 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982C42C443E0700D15671 /* SearchView.swift */; };
 		272450A22C234E90006AB30F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272450A12C234E90006AB30F /* AppDelegate.swift */; };
 		272450A42C234E90006AB30F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272450A32C234E90006AB30F /* SceneDelegate.swift */; };
 		272450A62C234E90006AB30F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272450A52C234E90006AB30F /* ViewController.swift */; };
@@ -54,6 +63,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		270982B22C442EEC00D15671 /* DatabaseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSetup.swift; sourceTree = "<group>"; };
+		270982B52C442F4200D15671 /* CoinKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinKeeper.xcdatamodel; sourceTree = "<group>"; };
+		270982B82C44300000D15671 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		270982BA2C44313700D15671 /* AssetDatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDatabaseProvider.swift; sourceTree = "<group>"; };
+		270982BD2C4433E200D15671 /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
+		270982BF2C443BD900D15671 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		270982C22C443DDD00D15671 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		270982C42C443E0700D15671 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		2724509E2C234E90006AB30F /* CoinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272450A12C234E90006AB30F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		272450A32C234E90006AB30F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2750C82F2C289781007D98DD /* Kingfisher in Frameworks */,
+				270982B12C442ED000D15671 /* CoreStore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +130,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		270982AF2C442ED000D15671 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		270982B72C442FF900D15671 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				270982B82C44300000D15671 /* Asset.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		270982BC2C4433DA00D15671 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				270982BD2C4433E200D15671 /* AssetService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		270982C12C443DD400D15671 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				270982C22C443DDD00D15671 /* SearchViewController.swift */,
+				270982C42C443E0700D15671 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		272450952C234E90006AB30F = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +169,7 @@
 				272450B72C234E91006AB30F /* CoinAppTests */,
 				272450C12C234E91006AB30F /* CoinAppUITests */,
 				2724509F2C234E90006AB30F /* Products */,
+				270982AF2C442ED000D15671 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +186,7 @@
 		272450A02C234E90006AB30F /* CoinApp */ = {
 			isa = PBXGroup;
 			children = (
+				270982BC2C4433DA00D15671 /* Services */,
 				2776BC012C41868200D9A6F9 /* Components */,
 				2750C8282C289394007D98DD /* Utils */,
 				2750C8232C28907C007D98DD /* Models */,
@@ -194,6 +246,7 @@
 				272450A72C234E90006AB30F /* Main.storyboard */,
 				272450AA2C234E91006AB30F /* Assets.xcassets */,
 				272450AC2C234E91006AB30F /* LaunchScreen.storyboard */,
+				270982B42C442F4200D15671 /* CoinKeeper.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -201,6 +254,7 @@
 		2750C8042C2881FC007D98DD /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				270982C12C443DD400D15671 /* Search */,
 				2750C8092C288380007D98DD /* Home */,
 				2750C8072C2882A5007D98DD /* MainCoordinator.swift */,
 			);
@@ -221,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				2750C80F2C288516007D98DD /* HomeViewModel.swift */,
+				270982BF2C443BD900D15671 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -255,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				2750C8212C289058007D98DD /* CoinProvider.swift */,
+				270982BA2C44313700D15671 /* AssetDatabaseProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -262,6 +318,7 @@
 		2750C8232C28907C007D98DD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				270982B72C442FF900D15671 /* DB */,
 				2750C8242C289084007D98DD /* CoinModel.swift */,
 				2750C8262C2892CA007D98DD /* AssetModel.swift */,
 			);
@@ -273,6 +330,7 @@
 			children = (
 				2750C8292C289399007D98DD /* State.swift */,
 				2750C82B2C2896E2007D98DD /* CurrencyFormatter.swift */,
+				270982B22C442EEC00D15671 /* DatabaseSetup.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -302,6 +360,7 @@
 			name = CoinApp;
 			packageProductDependencies = (
 				2750C82E2C289781007D98DD /* Kingfisher */,
+				270982B02C442ED000D15671 /* CoreStore */,
 			);
 			productName = CoinApp;
 			productReference = 2724509E2C234E90006AB30F /* CoinApp.app */;
@@ -377,6 +436,7 @@
 			mainGroup = 272450952C234E90006AB30F;
 			packageReferences = (
 				2750C82D2C289781007D98DD /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				270982AE2C442EC800D15671 /* XCRemoteSwiftPackageReference "CoreStore" */,
 			);
 			productRefGroup = 2724509F2C234E90006AB30F /* Products */;
 			projectDirPath = "";
@@ -421,8 +481,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270982BE2C4433E200D15671 /* AssetService.swift in Sources */,
 				2750C81C2C288B39007D98DD /* NetworkConstants.swift in Sources */,
 				2750C8252C289084007D98DD /* CoinModel.swift in Sources */,
+				270982C32C443DDD00D15671 /* SearchViewController.swift in Sources */,
+				270982B62C442F4200D15671 /* CoinKeeper.xcdatamodeld in Sources */,
+				270982B32C442EEC00D15671 /* DatabaseSetup.swift in Sources */,
 				2750C8222C289058007D98DD /* CoinProvider.swift in Sources */,
 				2750C8182C288AB6007D98DD /* NetworkManager.swift in Sources */,
 				2750C81F2C289002007D98DD /* AppError.swift in Sources */,
@@ -436,10 +500,14 @@
 				272450A22C234E90006AB30F /* AppDelegate.swift in Sources */,
 				2750C8012C283715007D98DD /* ApiKeys.swift in Sources */,
 				2750C8062C28821D007D98DD /* App.swift in Sources */,
+				270982C02C443BD900D15671 /* SearchViewModel.swift in Sources */,
 				2750C8132C288605007D98DD /* HomeHeaderView.swift in Sources */,
 				2750C80D2C2883BB007D98DD /* HomeView.swift in Sources */,
+				270982B92C44300000D15671 /* Asset.swift in Sources */,
 				2750C80B2C28838A007D98DD /* HomeViewController.swift in Sources */,
+				270982C52C443E0700D15671 /* SearchView.swift in Sources */,
 				2750C8272C2892CA007D98DD /* AssetModel.swift in Sources */,
+				270982BB2C44313700D15671 /* AssetDatabaseProvider.swift in Sources */,
 				272450A42C234E90006AB30F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +698,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,6 +727,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -789,6 +859,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		270982AE2C442EC800D15671 /* XCRemoteSwiftPackageReference "CoreStore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnEstropia/CoreStore";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.2.0;
+			};
+		};
 		2750C82D2C289781007D98DD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -800,12 +878,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		270982B02C442ED000D15671 /* CoreStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 270982AE2C442EC800D15671 /* XCRemoteSwiftPackageReference "CoreStore" */;
+			productName = CoreStore;
+		};
 		2750C82E2C289781007D98DD /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2750C82D2C289781007D98DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		270982B42C442F4200D15671 /* CoinKeeper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				270982B52C442F4200D15671 /* CoinKeeper.xcdatamodel */,
+			);
+			currentVersion = 270982B52C442F4200D15671 /* CoinKeeper.xcdatamodel */;
+			name = CoinKeeper.xcdatamodeld;
+			path = /Users/mike/Documents/WorkNStudy/Teaching/swiftbook/CoinApp/CoinApp/Resources/CoinKeeper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 272450962C234E90006AB30F /* Project object */;
 }

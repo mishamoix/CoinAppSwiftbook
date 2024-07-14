@@ -77,13 +77,13 @@ struct AssetView: View {
                         .frame(width: geometry.size.width * 0.25)
 
                     VStack(alignment: .trailing, spacing: 8) {
-                        Text("22$")
+                        Text(CurrencyFormatter.shared.price(for: model.value))
                             .font(.subheadline)
-                            .foregroundColor(.green)
+                            .foregroundColor(color)
 
-                        Text("1.55%")
+                        Text(CurrencyFormatter.shared.percent(for: model.percent))
                             .font(.subheadline)
-                            .foregroundColor(.green)
+                            .foregroundColor(color)
                     }
                     .frame(width: geometry.size.width * 0.25, alignment: .trailing)
                 }
@@ -92,5 +92,16 @@ struct AssetView: View {
             }
         })
         .frame(height: 60)
+    }
+
+    var color: Color {
+        switch model.pl {
+        case .up:
+            return .green
+        case .down:
+            return .red
+        case .same:
+            return .gray
+        }
     }
 }
