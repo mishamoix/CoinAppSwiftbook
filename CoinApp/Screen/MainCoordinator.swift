@@ -10,8 +10,8 @@ import UIKit
 protocol MainCoordinatorProtocol: AnyObject {
     func goBack()
     func goToSearch()
-    func goToPurchase()
-    func goToAsset()
+    func goToAddTransaction(with id: String)
+    func goToAsset(with id: String)
 }
 
 final class MainCoordinator {
@@ -23,8 +23,10 @@ final class MainCoordinator {
     }()
     private let network = NetworkManagerImpl()
 
+
     private let dbSetup = DatabaseSetup()
-    private lazy var assetService = AssetService(networkProvider: CoinProvider(network: network), dbProvider: AssetDatabaseProvider(dataStack: dbSetup.dataStack))
+    private lazy var assetService = AssetService(networkProvider: CoinProvider(network: network), dbProvider: AssetDatabaseProvider(dataStack: dbSetup.dataStack), transactionsProvider: TransactionDatabaseProvider(dataStack: dbSetup.dataStack))
+    private lazy var refreshService = RefreshService(assetService: assetService)
 
     init(window: UIWindow) {
         window.rootViewController = navigationController
@@ -36,6 +38,8 @@ final class MainCoordinator {
     func run() {
         let viewModel = HomeViewModel(service: assetService, coordinator: self)
         navigationController.setViewControllers([HomeViewController(viewModel: viewModel)], animated: false)
+
+        refreshService.scheduleUpdate()
     }
 }
 
@@ -49,11 +53,13 @@ extension MainCoordinator: MainCoordinatorProtocol {
         navigationController.pushViewController(SearchViewController(viewModel: viewModel), animated: true)
     }
     
-    func goToPurchase() {
-
+    func goToAddTransaction(with id: String) {
+        let viewModel = AddTransactionViewModel(assetId: id, service: assetService, coordinator: self)
+        navigationController.pushViewController(AddTransactionViewController(with: viewModel), animated: true)
     }
-    
-    func goToAsset() {
 
+    func goToAsset(with id: String) {
+        let viewModel = AssetCardViewModel(assetId: id, service: assetService, coordinator: self)
+        navigationController.pushViewController(AssetCardViewController(with: viewModel), animated: true)
     }
 }

@@ -10,4 +10,12 @@
         <attribute name="sort" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="symbol" attributeType="String"/>
     </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES">
+        <attribute name="coinId" attributeType="String"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="operation" attributeType="String"/>
+        <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="quantity" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
 </model>

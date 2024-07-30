@@ -34,6 +34,10 @@ struct SearchView: View {
                         CoinView(model: model)
                             .padding(.vertical, 12)
                             .padding(.horizontal, 16)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                viewModel.assetTapped(with: model.id)
+                            }
                     }
                 }
             }

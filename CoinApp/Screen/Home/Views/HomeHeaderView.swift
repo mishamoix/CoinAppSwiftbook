@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct HomeHeaderView: View {
+    let model: CommonPnLModel
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("$9999")
+                Text(CurrencyFormatter.shared.price(for: model.value))
                     .font(.system(size: 40, weight: .bold))
                     .foregroundColor(.black)
             }
             HStack {
-                Text("1.55%")
+                Text(CurrencyFormatter.shared.percent(for: model.percent))
                     .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.green)
                     .padding(5)
                     .background(Color.green.opacity(0.1))
                     .cornerRadius(4)
-                Text("153$")
+                Text(CurrencyFormatter.shared.price(for: model.pnlValue))
                     .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.green)
                 Spacer()
-                Text("🚀🚀")
+                Text(additionalText)
                     .font(.system(size: 24))
             }
         }
@@ -36,10 +38,28 @@ struct HomeHeaderView: View {
         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 4)
         .padding()
     }
-}
 
-struct HomeHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeHeaderView()
+    private var additionalText: String {
+        switch model.percent {
+        case 0...0.1:
+            return "👌"
+        case 0.1...1:
+            return "🚀"
+        case 1...2:
+            return "🚀🚀"
+        case 2...:
+            return "🚀🚀🚀"
+        case -0.1...0:
+            return "😢"
+        case -1...(-0.1):
+            return "👎"
+        case -2...(-1):
+            return "💀"
+        case ...(-2):
+            return "💀💀💀"
+        default:
+            return "☺️"
+        }
     }
+
 }

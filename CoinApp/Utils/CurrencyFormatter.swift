@@ -10,6 +10,8 @@ import Foundation
 final class CurrencyFormatter {
     static let shared = CurrencyFormatter()
 
+    private init() {}
+
     private let formatterCurrency: NumberFormatter = {
         let fmt = NumberFormatter()
         fmt.currencySymbol = "$"
@@ -21,7 +23,14 @@ final class CurrencyFormatter {
     private let formatterPercent: NumberFormatter = {
         let fmt = NumberFormatter()
         fmt.numberStyle = .percent
-        fmt.maximumSignificantDigits = 4
+        fmt.maximumFractionDigits = 2
+        return fmt
+    }()
+
+    private let formatterNumber: NumberFormatter = {
+        let fmt = NumberFormatter()
+        fmt.numberStyle = .decimal
+        fmt.maximumFractionDigits = 3
         return fmt
     }()
 
@@ -44,5 +53,12 @@ final class CurrencyFormatter {
     func currency(for value: Double, sign: String) -> String {
         formatterCurrency.currencySymbol = sign.uppercased()
         return formatterCurrency.string(from: NSNumber(floatLiteral: value)) ?? String(value)
+    }
+
+    func number(for value: Double?, defaultValue: String = "--") -> String {
+        guard let value else {
+            return defaultValue
+        }
+        return formatterNumber.string(from: NSNumber(floatLiteral: value)) ?? String(value)
     }
 }

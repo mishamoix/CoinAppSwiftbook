@@ -30,8 +30,10 @@ struct HomeView: View {
                     .padding(.trailing, 8)
                 }.frame(height: 44)
                 ScrollView {
-                    HomeHeaderView()
-                        .padding(.bottom, 20)
+                    if let pnl = viewModel.commonPnL {
+                        HomeHeaderView(model: pnl)
+                            .padding(.bottom, 20)
+                    }
                     makeList(with: models)
                 }
             case .error:
@@ -64,6 +66,8 @@ private extension HomeView {
     }
 
     func makeList(with models: [AssetModel]) -> some View {
-        return HomeCoinsList(assetModels: models)
+        return HomeCoinsList(assetModels: models) { assetId in
+            viewModel.assetTapped(with: assetId)
+        }
     }
 }

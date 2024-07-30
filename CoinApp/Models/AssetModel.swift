@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct AssetModel: Identifiable {
 
@@ -49,6 +50,20 @@ struct AssetModel: Identifiable {
             return quantity.count * (coin.currentPrice - quantity.avgPrice)
         } else {
             return nil
+        }
+    }
+}
+
+
+extension AssetModel {
+    var color: Color {
+        switch pl {
+        case .up:
+            return .green
+        case .down:
+            return .red
+        case .same:
+            return .gray
         }
     }
 }

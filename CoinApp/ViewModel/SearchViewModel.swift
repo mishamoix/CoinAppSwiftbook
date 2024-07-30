@@ -29,8 +29,8 @@ final class SearchViewModel: ObservableObject {
         coordinator?.goBack()
     }
 
-    func assetTapped() {
-        
+    func assetTapped(with id: String) {
+        coordinator?.goToAsset(with: id)
     }
 }
 
@@ -62,7 +62,7 @@ private extension SearchViewModel {
                 self.state = .idle
             case .fetching:
                 self.state = .loading
-            case .fetched(let data, _):
+            case .fetched(let data):
                 self.state = .loaded(filter(assets: data, text: text))
             case .error(let error):
                 self.state = .error(error)

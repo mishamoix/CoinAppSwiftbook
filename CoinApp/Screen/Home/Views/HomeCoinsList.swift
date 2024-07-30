@@ -11,6 +11,7 @@ import Kingfisher
 struct HomeCoinsList: View {
 
     let assetModels: [AssetModel]
+    let assetTapped: (String) -> Void
 
     var body: some View {
         GeometryReader { geometry in
@@ -35,6 +36,10 @@ struct HomeCoinsList: View {
 
         ForEach(assetModels) { model in
             AssetView(model: model)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    assetTapped(model.id)
+                }
             Divider()
         }
         .padding(.horizontal, 16)
@@ -64,7 +69,7 @@ struct AssetView: View {
                                 .font(.headline)
                                 .foregroundColor(.black)
 
-                            Text(CurrencyFormatter.shared.currency(for: 0.004, sign: model.coin.symbol))
+                            Text(CurrencyFormatter.shared.currency(for: model.quantity?.count ?? 0, sign: model.coin.symbol))
                                 .font(.subheadline)
                                 .foregroundColor(.gray)
                         }
@@ -79,11 +84,11 @@ struct AssetView: View {
                     VStack(alignment: .trailing, spacing: 8) {
                         Text(CurrencyFormatter.shared.price(for: model.value))
                             .font(.subheadline)
-                            .foregroundColor(color)
+                            .foregroundColor(model.color)
 
                         Text(CurrencyFormatter.shared.percent(for: model.percent))
                             .font(.subheadline)
-                            .foregroundColor(color)
+                            .foregroundColor(model.color)
                     }
                     .frame(width: geometry.size.width * 0.25, alignment: .trailing)
                 }
@@ -92,16 +97,5 @@ struct AssetView: View {
             }
         })
         .frame(height: 60)
-    }
-
-    var color: Color {
-        switch model.pl {
-        case .up:
-            return .green
-        case .down:
-            return .red
-        case .same:
-            return .gray
-        }
     }
 }
