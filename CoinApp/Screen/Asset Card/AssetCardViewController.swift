@@ -7,10 +7,12 @@
 
 import Foundation
 import SwiftUI
+import Nexus
 
-final class AssetCardViewController: UIHostingController<AssetCardView> {
-    init(with viewModel: AssetCardViewModel) {
-        super.init(rootView: AssetCardView(viewModel: viewModel))
+
+final class AssetCardViewController: UIHostingController<AnyView> {
+    init(with viewModel: AssetCardViewModel, themeManager: ThemeManager) {
+        super.init(rootView: AnyView(AssetCardView(viewModel: viewModel).environmentObject(themeManager)))
     }
 
     @MainActor required dynamic init?(coder aDecoder: NSCoder) {

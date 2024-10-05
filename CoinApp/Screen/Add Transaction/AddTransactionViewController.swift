@@ -7,10 +7,12 @@
 
 import Foundation
 import SwiftUI
+import Nexus
 
-final class AddTransactionViewController: UIHostingController<AddTransactionView> {
-    init(with viewModel: AddTransactionViewModel) {
-        super.init(rootView: AddTransactionView(viewModel: viewModel))
+
+final class AddTransactionViewController: UIHostingController<AnyView> {
+    init(with viewModel: AddTransactionViewModel, themeManager: ThemeManager) {
+        super.init(rootView: AnyView(AddTransactionView(viewModel: viewModel).environmentObject(themeManager)))
     }
 
     @MainActor required dynamic init?(coder aDecoder: NSCoder) {

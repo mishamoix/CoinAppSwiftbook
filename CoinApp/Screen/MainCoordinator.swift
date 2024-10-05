@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nexus
 
 protocol MainCoordinatorProtocol: AnyObject {
     func goBack()
@@ -22,7 +23,7 @@ final class MainCoordinator {
         return nav
     }()
     private let network = NetworkManagerImpl()
-
+    private let themeManager = ThemeManager.shared
 
     private let dbSetup = DatabaseSetup()
     private lazy var assetService = AssetService(networkProvider: CoinProvider(network: network), dbProvider: AssetDatabaseProvider(dataStack: dbSetup.dataStack), transactionsProvider: TransactionDatabaseProvider(dataStack: dbSetup.dataStack))
@@ -37,7 +38,7 @@ final class MainCoordinator {
 
     func run() {
         let viewModel = HomeViewModel(service: assetService, coordinator: self)
-        navigationController.setViewControllers([HomeViewController(viewModel: viewModel)], animated: false)
+        navigationController.setViewControllers([HomeViewController(viewModel: viewModel, themeManager: themeManager)], animated: false)
 
         refreshService.scheduleUpdate()
     }
@@ -50,16 +51,16 @@ extension MainCoordinator: MainCoordinatorProtocol {
     
     func goToSearch() {
         let viewModel = SearchViewModel(service: assetService, coordinator: self)
-        navigationController.pushViewController(SearchViewController(viewModel: viewModel), animated: true)
+        navigationController.pushViewController(SearchViewController(viewModel: viewModel, themeManager: themeManager), animated: true)
     }
     
     func goToAddTransaction(with id: String) {
         let viewModel = AddTransactionViewModel(assetId: id, service: assetService, coordinator: self)
-        navigationController.pushViewController(AddTransactionViewController(with: viewModel), animated: true)
+        navigationController.pushViewController(AddTransactionViewController(with: viewModel, themeManager: themeManager), animated: true)
     }
 
     func goToAsset(with id: String) {
         let viewModel = AssetCardViewModel(assetId: id, service: assetService, coordinator: self)
-        navigationController.pushViewController(AssetCardViewController(with: viewModel), animated: true)
+        navigationController.pushViewController(AssetCardViewController(with: viewModel, themeManager: themeManager), animated: true)
     }
 }

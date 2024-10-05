@@ -24,4 +24,4 @@ struct GrayFontSet: FontSet {
     let button = UIFont(name: "Futura-Medium", size: 18)!
 }
 
-let grayTheme = Theme(name: "Gray", colors: GrayColorSet(), fonts: GrayFontSet())
+public let grayTheme = Theme(name: "Gray", colors: GrayColorSet(), fonts: GrayFontSet())

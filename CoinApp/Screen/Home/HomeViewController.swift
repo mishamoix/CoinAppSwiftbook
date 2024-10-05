@@ -7,14 +7,19 @@
 
 import UIKit
 import SwiftUI
+import Nexus
 
-final class HomeViewController: UIHostingController<HomeView> {
+final class HomeViewController: UIHostingController<AnyView> {
 
     private var viewModel: HomeViewModel
 
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel, themeManager: ThemeManager) {
         self.viewModel = viewModel
-        super.init(rootView: HomeView(viewModel: viewModel))
+        super.init(
+            rootView: AnyView(
+                HomeView(viewModel: viewModel).environmentObject(themeManager)
+            )
+        )
     }
     
     @MainActor required dynamic init?(coder aDecoder: NSCoder) {
