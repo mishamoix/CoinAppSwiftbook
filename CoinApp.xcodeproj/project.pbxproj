@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		270982B12C442ED000D15671 /* CoreStore in Frameworks */ = {isa = PBXBuildFile; productRef = 270982B02C442ED000D15671 /* CoreStore */; };
 		270982B32C442EEC00D15671 /* DatabaseSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982B22C442EEC00D15671 /* DatabaseSetup.swift */; };
-		270982B62C442F4200D15671 /* CoinKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 270982B42C442F4200D15671 /* CoinKeeper.xcdatamodeld */; };
 		270982B92C44300000D15671 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982B82C44300000D15671 /* Asset.swift */; };
 		270982BB2C44313700D15671 /* AssetDatabaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982BA2C44313700D15671 /* AssetDatabaseProvider.swift */; };
 		270982BE2C4433E200D15671 /* AssetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270982BD2C4433E200D15671 /* AssetService.swift */; };
@@ -43,6 +42,8 @@
 		2750C82A2C289399007D98DD /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750C8292C289399007D98DD /* State.swift */; };
 		2750C82C2C2896E2007D98DD /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750C82B2C2896E2007D98DD /* CurrencyFormatter.swift */; };
 		2750C82F2C289781007D98DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2750C82E2C289781007D98DD /* Kingfisher */; };
+		276159712CB1545F00493213 /* CoinKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2761596F2CB1545F00493213 /* CoinKeeper.xcdatamodeld */; };
+		2761597A2CB1559B00493213 /* Nexus in Frameworks */ = {isa = PBXBuildFile; productRef = 276159792CB1559B00493213 /* Nexus */; };
 		27DB764B2C593777008E07E9 /* RefreshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB764A2C593777008E07E9 /* RefreshService.swift */; };
 		27DB764D2C593834008E07E9 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB764C2C593834008E07E9 /* TransactionModel.swift */; };
 		27DB764F2C593857008E07E9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB764E2C593857008E07E9 /* Transaction.swift */; };
@@ -77,7 +78,6 @@
 
 /* Begin PBXFileReference section */
 		270982B22C442EEC00D15671 /* DatabaseSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSetup.swift; sourceTree = "<group>"; };
-		270982B52C442F4200D15671 /* CoinKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinKeeper.xcdatamodel; sourceTree = "<group>"; };
 		270982B82C44300000D15671 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		270982BA2C44313700D15671 /* AssetDatabaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDatabaseProvider.swift; sourceTree = "<group>"; };
 		270982BD2C4433E200D15671 /* AssetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetService.swift; sourceTree = "<group>"; };
@@ -114,6 +114,7 @@
 		2750C8262C2892CA007D98DD /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		2750C8292C289399007D98DD /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		2750C82B2C2896E2007D98DD /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		276159702CB1545F00493213 /* CoinKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinKeeper.xcdatamodel; sourceTree = "<group>"; };
 		27DB764A2C593777008E07E9 /* RefreshService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshService.swift; sourceTree = "<group>"; };
 		27DB764C2C593834008E07E9 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		27DB764E2C593857008E07E9 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -129,11 +130,16 @@
 		27DB76642C5948FC008E07E9 /* CommonPnL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPnL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		276159772CB1557E00493213 /* Packages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Packages; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		2724509B2C234E90006AB30F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2761597A2CB1559B00493213 /* Nexus in Frameworks */,
 				2750C82F2C289781007D98DD /* Kingfisher in Frameworks */,
 				270982B12C442ED000D15671 /* CoreStore in Frameworks */,
 			);
@@ -193,6 +199,7 @@
 		272450952C234E90006AB30F = {
 			isa = PBXGroup;
 			children = (
+				276159772CB1557E00493213 /* Packages */,
 				272450A02C234E90006AB30F /* CoinApp */,
 				272450B72C234E91006AB30F /* CoinAppTests */,
 				272450C12C234E91006AB30F /* CoinAppUITests */,
@@ -271,10 +278,10 @@
 		2750C8032C2881DC007D98DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2761596F2CB1545F00493213 /* CoinKeeper.xcdatamodeld */,
 				272450A72C234E90006AB30F /* Main.storyboard */,
 				272450AA2C234E91006AB30F /* Assets.xcassets */,
 				272450AC2C234E91006AB30F /* LaunchScreen.storyboard */,
-				270982B42C442F4200D15671 /* CoinKeeper.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -353,8 +360,8 @@
 			children = (
 				270982B72C442FF900D15671 /* DB */,
 				2750C8242C289084007D98DD /* CoinModel.swift */,
-				2750C8262C2892CA007D98DD /* AssetModel.swift */,
 				27DB764C2C593834008E07E9 /* TransactionModel.swift */,
+				2750C8262C2892CA007D98DD /* AssetModel.swift */,
 				27DB76542C593AEE008E07E9 /* FullAssetInfoModel.swift */,
 				27DB76642C5948FC008E07E9 /* CommonPnL.swift */,
 			);
@@ -416,6 +423,7 @@
 			packageProductDependencies = (
 				2750C82E2C289781007D98DD /* Kingfisher */,
 				270982B02C442ED000D15671 /* CoreStore */,
+				276159792CB1559B00493213 /* Nexus */,
 			);
 			productName = CoinApp;
 			productReference = 2724509E2C234E90006AB30F /* CoinApp.app */;
@@ -536,12 +544,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276159712CB1545F00493213 /* CoinKeeper.xcdatamodeld in Sources */,
 				27DB764D2C593834008E07E9 /* TransactionModel.swift in Sources */,
 				270982BE2C4433E200D15671 /* AssetService.swift in Sources */,
 				2750C81C2C288B39007D98DD /* NetworkConstants.swift in Sources */,
 				2750C8252C289084007D98DD /* CoinModel.swift in Sources */,
 				270982C32C443DDD00D15671 /* SearchViewController.swift in Sources */,
-				270982B62C442F4200D15671 /* CoinKeeper.xcdatamodeld in Sources */,
 				270982B32C442EEC00D15671 /* DatabaseSetup.swift in Sources */,
 				2750C8222C289058007D98DD /* CoinProvider.swift in Sources */,
 				2750C8182C288AB6007D98DD /* NetworkManager.swift in Sources */,
@@ -956,17 +964,20 @@
 			package = 2750C82D2C289781007D98DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
+		276159792CB1559B00493213 /* Nexus */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Nexus;
+		};
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		270982B42C442F4200D15671 /* CoinKeeper.xcdatamodeld */ = {
+		2761596F2CB1545F00493213 /* CoinKeeper.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				270982B52C442F4200D15671 /* CoinKeeper.xcdatamodel */,
+				276159702CB1545F00493213 /* CoinKeeper.xcdatamodel */,
 			);
-			currentVersion = 270982B52C442F4200D15671 /* CoinKeeper.xcdatamodel */;
-			name = CoinKeeper.xcdatamodeld;
-			path = /Users/mike/Documents/WorkNStudy/Teaching/swiftbook/CoinApp/CoinApp/Resources/CoinKeeper.xcdatamodeld;
+			currentVersion = 276159702CB1545F00493213 /* CoinKeeper.xcdatamodel */;
+			path = CoinKeeper.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
