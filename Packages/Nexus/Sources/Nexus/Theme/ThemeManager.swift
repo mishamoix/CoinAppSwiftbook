@@ -23,7 +23,7 @@ class AppearanceObserver: UIView {
 public class ThemeManager: ObservableObject {
     @Published public private(set) var theme: Theme
 
-    public static let shared = ThemeManager(theme: grayTheme)
+    public static let shared = ThemeManager(theme: DefaultTheme)
     private var observers = NSHashTable<NObserver>.weakObjects()
     private let appearanceObserver = AppearanceObserver()
 

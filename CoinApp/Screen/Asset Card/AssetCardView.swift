@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import Nexus
 
 struct AssetCardView: View {
 
@@ -91,12 +92,12 @@ private struct PortfolioView: View {
                 Text(CurrencyFormatter.shared.percent(for: asset.percent))
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
-                    .background(asset.color.opacity(0.2))
-                    .foregroundColor(asset.color)
+                    .appBackground(asset.background)
+                    .appForeground(asset.color)
                     .cornerRadius(4)
 
                 Text(CurrencyFormatter.shared.price(for: asset.value))
-                    .foregroundColor(asset.color)
+                    .appForeground(asset.color)
             }
             .font(.system(size: 14, weight: .medium))
 

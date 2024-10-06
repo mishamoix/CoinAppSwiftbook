@@ -33,6 +33,7 @@ final class MainCoordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
+        themeManager.updateTheme(BlueTheme)
         dbSetup.setup()
     }
 

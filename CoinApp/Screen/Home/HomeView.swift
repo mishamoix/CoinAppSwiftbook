@@ -11,6 +11,7 @@ import Nexus
 struct HomeView: View {
 
     @ObservedObject var viewModel: HomeViewModel
+    @EnvironmentObject var themeManager: ThemeManager
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -25,6 +26,8 @@ struct HomeView: View {
                     }, label: {
                         Image(.magnifier)
                             .resizable()
+                            .renderingMode(.template)
+                            .appForeground(\.text)
                             .frame(width: 26, height: 26)
                             .frame(width: 44, height: 44)
                     })
@@ -40,7 +43,18 @@ struct HomeView: View {
             case .error:
                 error
             }
+
+            Button("Сменить тему") {
+                if themeManager.theme.name == "Blue" {
+                    themeManager.updateTheme(YellowTheme)
+                } else {
+                    themeManager.updateTheme(BlueTheme)
+                }
+            }
+            .buttonStyle(ActionButtonStyle(style: .affirm))
+            .padding(.horizontal)
         }
+        .appBackground(\.background)
     }
 }
 

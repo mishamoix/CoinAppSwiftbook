@@ -24,18 +24,21 @@ public struct ActionButtonStyle: ButtonStyle {
     public func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
+            .frame(maxWidth: .infinity)
             .padding()
             .appBackground(bgColor)
-            .appForeground(\.bodyText)
-            .font(Font(theme.fonts.button))
+            .appForeground(\.textInversed)
+            .appFont(\.button)
+            .cornerRadius(12)
+            .shadow(color: Color(theme.colors.shadow), radius: 5, x: 0, y: 5)
     }
 
     private var bgColor: KeyPath<ColorSet, UIColor> {
         switch style {
         case .affirm:
-            return \.affirmButton
+            return \.accent
         case .negative:
-            return \.negativeButton
+            return \.backgroundNegative
         }
     }
 }

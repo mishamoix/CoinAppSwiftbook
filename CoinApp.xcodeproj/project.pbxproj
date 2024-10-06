@@ -44,6 +44,9 @@
 		2750C82F2C289781007D98DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2750C82E2C289781007D98DD /* Kingfisher */; };
 		276159712CB1545F00493213 /* CoinKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2761596F2CB1545F00493213 /* CoinKeeper.xcdatamodeld */; };
 		2761597A2CB1559B00493213 /* Nexus in Frameworks */ = {isa = PBXBuildFile; productRef = 276159792CB1559B00493213 /* Nexus */; };
+		27C73ADD2CB2A0AD0082FC14 /* BlueTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C73ADC2CB2A0AD0082FC14 /* BlueTheme.swift */; };
+		27C73ADF2CB2A0ED0082FC14 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C73ADE2CB2A0ED0082FC14 /* AppFonts.swift */; };
+		27C73AE12CB2A4410082FC14 /* YellowTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C73AE02CB2A4410082FC14 /* YellowTheme.swift */; };
 		27DB764B2C593777008E07E9 /* RefreshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB764A2C593777008E07E9 /* RefreshService.swift */; };
 		27DB764D2C593834008E07E9 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB764C2C593834008E07E9 /* TransactionModel.swift */; };
 		27DB764F2C593857008E07E9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DB764E2C593857008E07E9 /* Transaction.swift */; };
@@ -115,6 +118,9 @@
 		2750C8292C289399007D98DD /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		2750C82B2C2896E2007D98DD /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		276159702CB1545F00493213 /* CoinKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinKeeper.xcdatamodel; sourceTree = "<group>"; };
+		27C73ADC2CB2A0AD0082FC14 /* BlueTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueTheme.swift; sourceTree = "<group>"; };
+		27C73ADE2CB2A0ED0082FC14 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		27C73AE02CB2A4410082FC14 /* YellowTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowTheme.swift; sourceTree = "<group>"; };
 		27DB764A2C593777008E07E9 /* RefreshService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshService.swift; sourceTree = "<group>"; };
 		27DB764C2C593834008E07E9 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		27DB764E2C593857008E07E9 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 		272450A02C234E90006AB30F /* CoinApp */ = {
 			isa = PBXGroup;
 			children = (
+				27C73ADB2CB2A0A40082FC14 /* Themes */,
 				270982BC2C4433DA00D15671 /* Services */,
 				2776BC012C41868200D9A6F9 /* Components */,
 				2750C8282C289394007D98DD /* Utils */,
@@ -384,6 +391,16 @@
 				27DB765B2C593D26008E07E9 /* MainButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		27C73ADB2CB2A0A40082FC14 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				27C73ADC2CB2A0AD0082FC14 /* BlueTheme.swift */,
+				27C73ADE2CB2A0ED0082FC14 /* AppFonts.swift */,
+				27C73AE02CB2A4410082FC14 /* YellowTheme.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		27DB76562C593C6B008E07E9 /* Asset Card */ = {
@@ -555,6 +572,7 @@
 				2750C8182C288AB6007D98DD /* NetworkManager.swift in Sources */,
 				27DB76552C593AEE008E07E9 /* FullAssetInfoModel.swift in Sources */,
 				2750C81F2C289002007D98DD /* AppError.swift in Sources */,
+				27C73AE12CB2A4410082FC14 /* YellowTheme.swift in Sources */,
 				27DB765A2C593C9B008E07E9 /* AssetCardView.swift in Sources */,
 				272450A62C234E90006AB30F /* ViewController.swift in Sources */,
 				27DB76532C593955008E07E9 /* TransactionDatabaseProvider.swift in Sources */,
@@ -576,6 +594,7 @@
 				27DB76632C593E0D008E07E9 /* AddTransactionView.swift in Sources */,
 				27DB76652C5948FC008E07E9 /* CommonPnL.swift in Sources */,
 				27DB76582C593C85008E07E9 /* AssetCardViewController.swift in Sources */,
+				27C73ADF2CB2A0ED0082FC14 /* AppFonts.swift in Sources */,
 				2750C80D2C2883BB007D98DD /* HomeView.swift in Sources */,
 				27DB76512C5938F2008E07E9 /* AssetCardViewModel.swift in Sources */,
 				270982B92C44300000D15671 /* Asset.swift in Sources */,
@@ -585,6 +604,7 @@
 				27DB765C2C593D26008E07E9 /* MainButton.swift in Sources */,
 				270982BB2C44313700D15671 /* AssetDatabaseProvider.swift in Sources */,
 				272450A42C234E90006AB30F /* SceneDelegate.swift in Sources */,
+				27C73ADD2CB2A0AD0082FC14 /* BlueTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

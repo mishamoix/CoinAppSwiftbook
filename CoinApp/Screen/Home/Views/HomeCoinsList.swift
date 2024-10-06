@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import Nexus
 
 struct HomeCoinsList: View {
 
@@ -25,7 +26,8 @@ struct HomeCoinsList: View {
                 Text("П/У")
                     .frame(width: geometry.size.width * 0.25, alignment: .trailing)
             }
-            .foregroundColor(.gray)
+            .appForeground(\.textSecondary)
+            .appFont(\.headerTertiary)
         }
         .padding(.horizontal, 16)
         .frame(height: 24)
@@ -66,30 +68,28 @@ struct AssetView: View {
 
                         VStack(alignment: .leading, spacing: 8) {
                             Text(model.coin.name.uppercased())
-                                .font(.headline)
-                                .foregroundColor(.black)
+                                .appFont(\.headerSecondary)
+                                .appForeground(\.text)
 
                             Text(CurrencyFormatter.shared.currency(for: model.quantity?.count ?? 0, sign: model.coin.symbol))
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
+                                .appFont(\.caption)
+                                .appForeground(\.textSecondary)
                         }
                     }
                     .frame(width: geometry.size.width * 0.5, alignment: .leading)
 
                     Text(CurrencyFormatter.shared.price(for: model.coin.currentPrice))
-                        .font(.headline)
-                        .foregroundColor(.black)
+                        .appFont(\.headerSecondary)
+                        .appForeground(\.text)
                         .frame(width: geometry.size.width * 0.25)
 
                     VStack(alignment: .trailing, spacing: 8) {
                         Text(CurrencyFormatter.shared.price(for: model.value))
-                            .font(.subheadline)
-                            .foregroundColor(model.color)
 
                         Text(CurrencyFormatter.shared.percent(for: model.percent))
-                            .font(.subheadline)
-                            .foregroundColor(model.color)
                     }
+                    .appFont(\.text)
+                    .appForeground(model.color)
                     .frame(width: geometry.size.width * 0.25, alignment: .trailing)
                 }
 

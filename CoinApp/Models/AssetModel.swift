@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Nexus
 
 struct AssetModel: Identifiable {
 
@@ -56,14 +57,25 @@ struct AssetModel: Identifiable {
 
 
 extension AssetModel {
-    var color: Color {
+    var color: KeyPath<ColorSet, UIColor> {
         switch pl {
         case .up:
-            return .green
+            return \.textPositive
         case .down:
-            return .red
+            return \.textNegative
         case .same:
-            return .gray
+            return \.textSecondary
+        }
+    }
+
+    var background: KeyPath<ColorSet, UIColor> {
+        switch pl {
+        case .up:
+            return \.backgroundPositive
+        case .down:
+            return \.backgroundNegative
+        case .same:
+            return \.background
         }
     }
 }

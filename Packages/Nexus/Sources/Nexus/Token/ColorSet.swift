@@ -8,14 +8,21 @@
 import SwiftUI
 
 public protocol ColorSet {
-    var primary: UIColor { get }
-    var secondary: UIColor { get }
+    var accent: UIColor { get }
 
-    var affirmButton: UIColor { get }
-    var negativeButton: UIColor { get }
+    var background: UIColor { get }
+    var backgroundSecondary: UIColor { get }
+    var backgroundPositive: UIColor { get }
+    var backgroundNegative: UIColor { get }
 
-    var bodyText: UIColor { get }
-    var textBox: UIColor { get }
+    var text: UIColor { get }
+    var textSecondary: UIColor { get }
+    var textPositive: UIColor { get }
+    var textNegative: UIColor { get }
+    var textInversed: UIColor { get }
+
+    var border: UIColor { get }
+    var shadow: UIColor { get }
 }
 
 public extension UIColor {

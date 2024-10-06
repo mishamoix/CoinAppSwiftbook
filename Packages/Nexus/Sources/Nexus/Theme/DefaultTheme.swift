@@ -8,20 +8,44 @@
 import Foundation
 import SwiftUI
 
-struct GrayColorSet: ColorSet {
-    let primary = UIColor(light: UIColor(hex: "bdc3c7"), dark: UIColor(hex: "7f8c8d"))
-    let secondary = UIColor(light: UIColor(hex: "95a5a6"), dark: UIColor(hex: "7f8c8d"))
-    let affirmButton = UIColor(light: UIColor(hex: "7f8c8d"), dark: UIColor(hex: "bdc3c7"))
-    let negativeButton = UIColor(light: UIColor(hex: "95a5a6"), dark: UIColor(hex: "7f8c8d"))
-    let bodyText = UIColor(light: UIColor(hex: "2c3e50"), dark: UIColor(hex: "ecf0f1"))
-    let textBox = UIColor(light: UIColor(hex: "ecf0f1"), dark: UIColor(hex: "34495e"))
+struct DefaultColorSet: ColorSet {
+    let accent = UIColor.blue
+
+    let background = UIColor.white
+
+    let backgroundSecondary = UIColor.lightGray
+
+    let backgroundPositive = UIColor.green.withAlphaComponent(0.2)
+
+    let backgroundNegative = UIColor.red.withAlphaComponent(0.2)
+
+    let text = UIColor.black
+
+    let textSecondary = UIColor.gray
+
+    let textPositive = UIColor.green
+
+    let textNegative = UIColor.red
+
+    let textInversed = UIColor.white
+
+    let border = UIColor.lightGray
+
+    let shadow = UIColor.black.withAlphaComponent(0.1)
 }
 
-struct GrayFontSet: FontSet {
-    let title = UIFont(name: "Futura-Bold", size: 28)!
-    let subtitle = UIFont(name: "Futura-Medium", size: 22)!
-    let body = UIFont(name: "Futura", size: 16)!
-    let button = UIFont(name: "Futura-Medium", size: 18)!
+struct DefaultFontSet: FontSet {
+    let header = UIFont.systemFont(ofSize: 32, weight: .bold)
+
+    let headerSecondary = UIFont.systemFont(ofSize: 20, weight: .semibold)
+
+    let headerTertiary = UIFont.systemFont(ofSize: 16, weight: .light)
+
+    let text = UIFont.systemFont(ofSize: 15, weight: .regular)
+
+    let caption = UIFont.systemFont(ofSize: 14, weight: .light)
+
+    let button = UIFont.systemFont(ofSize: 16, weight: .medium)
 }
 
-public let grayTheme = Theme(name: "Gray", colors: GrayColorSet(), fonts: GrayFontSet())
+public let DefaultTheme = Theme(name: "Default", colors: DefaultColorSet(), fonts: DefaultFontSet())
